@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- a way is imported if it matches one of the following tag_values -->
+<!-- tag_values are processed in the order of their ID -->
+<configuration>
+  <tag_name name="aq_type" id="1">
+    <tag_value name="водопровод" id="100" />
+    <tag_value name="спирателен-кран" id="101" />
+    <tag_value name="възел-разклонител" id="102" />
+    <tag_value name="резервоар" id="103" />
+    <tag_value name="потребление-водомер" id="104" />
+    <tag_value name="каптаж" id="105" />
+    <tag_value name="помпена-станция" id="106" />
+    <tag_value name="дма-водомер" id="107" />
+    <tag_value name="тапа" id="199" />
+  </tag_name>
+</configuration>
