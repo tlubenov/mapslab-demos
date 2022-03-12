@@ -1,0 +1,303 @@
+    1  sudo apt-get update
+    2  sudo apt-get upgrade
+    3  sudo apt-get update
+    4  sudo apt-get upgrade
+    5  sudo apt-get install postgresql postgresql-contrib
+    6  sudo -i -u postgres
+    7  sudo apt-get update
+    8  sudo apt-get upgrade
+    9  sudo apt-get install postgis postgresql-12-postgis-3
+   10  sudo apt-get update
+   11  sudo apt-get upgrade
+   12  sudo -i -u postgres
+   13  ls
+   14  git clone git://github.com/pgRouting/pgrouting.git
+   15  cd pgrouting/
+   16  git checkout v3.3.0 
+   17  ls
+   18  mkdir build
+   19  cd build/
+   20  cmake ..
+   21  sudo apt-get update
+   22  sudo apt-get upgrade
+   23  sudo apt-get install cmake
+   24  sudo apt-get install g++ libboost-graph-dev
+   25  sudo apt-get update
+   26  sudo apt-get upgrade
+   27  sudo apt-get install postgis postgresql-12-dev
+   28  sudo apt-get install postgis postgresql-server-dev-12
+   29  cmake ..
+   30  cmake -L ..
+   31  cmake -DWITH_DOC=ON ..
+   32  cmake -L ..
+   33  make
+   34  sudo apt-get install python-sphinx
+   35  sudo apt-get install python3-sphinx
+   36  make
+   37  cmake -L ..
+   38  make
+   39  cmake -L ..
+   40  cmake -BUILD_DOXY:BOOL=ON ..
+   41  BUILD_HTML=ON
+   42  cmake -BUILD_DOXY=OFF -BUILD_DOXY=OFF ..
+   43  make
+   44  history 
+   45  sudo apt-get update
+   46  sudo apt-get upgrade
+   47  sudo apt-get install python3-sphinx
+   48  cd ../../
+   49  ls
+   50  git clone https://github.com/sphinx-doc/sphinx
+   51  cd sphinx/
+   52  pip install .
+   53  sudo apt-get install python3-pip
+   54  pip install .
+   55  cd ../pgrouting/build/
+   56  cmake -BUILD_DOXY=OFF -BUILD_DOXY=OFF ..
+   57  make
+   58  ls
+   59  nano cmake_install.cmake 
+   60  nano Makefile 
+   61  cd ../
+   62  ls
+   63  wget -O pgrouting-3.3.0.tar.gz https://github.com/pgRouting/pgrouting/archive/v3.3.0.tar.gz
+   64  ls
+   65  tar xvfz pgrouting-3.3.0.tar.gz 
+   66  ls
+   67  cd pgrouting-3.3.0/
+   68  ls
+   69  mkdir build
+   70  cd build/
+   71  cmake ..
+   72  make
+   73  sudo make install
+   74  reboot
+   75  sudo reboot
+   76  history 
+   77  sudo -i -u postgres 
+   78  vagrant halt
+   79  exit
+   80  ls
+   81  cd /srv/valves/
+   82  ls
+   83  mv /home/vagrant/pgrouting-3.3.0.tar.gz .
+   84  sudo -i -u postgres 
+   85  cd /etc/postgresql/12/main/
+   86  ls
+   87  cp pg_ident.conf /srv/valves/
+   88  sudo cp pg_ident.conf /srv/valves/
+   89  sudo cp postgresql.conf /srv/valves/
+   90  sudo cp pg_hba.conf /srv/valves/
+   91  sudo cp /srv/valves/postgresql/pg_hba.conf /etc/postgresql/12/main/
+   92  sudo cp /srv/valves/postgresql/postgresql.conf /etc/postgresql/12/main/
+   93  sudo systemctl restart postgresql
+   94  ifconfig
+   95  sudo apt-get install net-tools
+   96  ifconfig
+   97  history 
+   98  history > /srv/valves/hist_20220208.txt
+   99  exit
+  100  sudo cp /srv/valves/postgresql/postgresql.conf /etc/postgresql/12/main/
+  101  sudo cp /srv/valves/postgresql/pg_hba.conf /etc/postgresql/12/main/
+  102  sudo systemctl restart postgresql
+  103  sudo systemctl status postgresql
+  104  sudo cp /srv/valves/postgresql/pg_hba.conf /etc/postgresql/12/main/
+  105  sudo systemctl status postgresql
+  106  sudo systemctl restart postgresql
+  107  ss -nlt
+  108  sudo nano /etc/postgresql/12/main/postgresql.conf 
+  109  sudo systemctl restart postgresql
+  110  sudo nano /etc/postgresql/12/main/pg_hba.conf 
+  111  sudo cp /srv/valves/postgresql/pg_hba.conf /etc/postgresql/12/main/
+  112  sudo systemctl restart postgresql
+  113  ss -nlt
+  114  sudo systemctl restart postgresql
+  115  sudo cp /srv/valves/postgresql/pg_hba.conf /etc/postgresql/12/main/
+  116  sudo systemctl restart postgresql
+  117  sudo systemctl status postgresql
+  118  sudo systemctl restart postgresql
+  119  sudo cp /srv/valves/postgresql/pg_hba.conf /etc/postgresql/12/main/
+  120  sudo systemctl restart postgresql
+  121  exit
+  122  sudo apt-get update
+  123  sudo apt-get upgrade
+  124  sudo apt-get update
+  125  sudo apt-get upgrade
+  126  sudo apt-get install openjdk-11-jdk
+  127  java -version
+  128  which java
+  129  java -version
+  130  sudo useradd -m -U -d /opt/tomcat -s /bin/false tomcat
+  131  VERSION=9.0.58
+  132  wget https://www-eu.apache.org/dist/tomcat/tomcat-9/v${VERSION}/bin/apache-tomcat-${VERSION}.tar.gz
+  133  ls
+  134  sudo tar -xf apache-tomcat-9.0.58.tar.gz -C /opt/tomcat/
+  135  cd /opt/tomcat/
+  136  ls
+  137  sudo ln -s /opt/tomcat/apache-tomcat-9.0.58 /opt/tomcat/latest
+  138  chown -T tomcat:tomcat /opt/tomcat/
+  139  chown -R tomcat:tomcat /opt/tomcat/
+  140  sudo chown -R tomcat:tomcat /opt/tomcat/
+  141  sudo sh -c 'chmod +x /opt/tomcat/latest/bin/*.sh'
+  142  sudo nano /etc/systemd/system/tomcat.service
+  143  cp /etc/systemd/system/tomcat.service /srv/valves/
+  144  sudo systemctl daemon-reload
+  145  sudo systemctl enable tomcat
+  146  sudo systemctl start tomcat
+  147  sudo systemctl status tomcat
+  148  sudo ufw allow 8080
+  149  sudo systemctl restart tomcat
+  150  sudo systemctl status tomcat
+  151  history 
+  152  exit
+  153  sudo systemctl status tomcat
+  154  sudo su tomcat
+  155  sudo -u tomcat
+  156  sudo su tomcat
+  157  sudo -U tomcat
+  158  history 
+  159  sudo -i -u tomcat
+  160  user
+  161  cd /opt/tomcat/
+  162  ls
+  163  cd latest
+  164  ls
+  165  cd bin/
+  166  ls
+  167  cd bin/
+  168  ls
+  169  sudo cd bin/
+  170  ls
+  171  ls -la
+  172  sudo cd bin/
+  173  sudo ./bin/startup.sh
+  174  exit
+  175  sudo apt-get update
+  176  sudo apt-get upgrade
+  177  history 
+  178  sudo -i -u postgres
+  179  ls
+  180  git clone https://github.com/pgRouting/osm2pgrouting.git
+  181  ls
+  182  cd osm2pgrouting/
+  183  ls
+  184  make
+  185  ls
+  186  sudo apt-get update
+  187  sudo apt-get upgrade
+  188  sudo apt-get install expat libexpat1-dev libboost-dev libpqxx-dev
+  189  sudo apt-get install libboost-program-options-dev
+  190  cmake -H. -Bbuild
+  191  cd build/
+  192  make
+  193  make install
+  194  sudo make install
+  195  ls
+  196  ls -la
+  197  cd ../
+  198  ls
+  199  cp mapconfig.xml /srv/valves/
+  200  sudo apt-get update
+  201  sudo apt-get upgrade
+  202  ls
+  203  mkdir osmosis
+  204  cp /srv/valves/osmosis/osmosis-0.48.3.tar osmosis/
+  205  cd osmosis/
+  206  ls
+  207  tar xvfz osmosis-0.48.3.tar 
+  208  cp /srv/valves/osmosis/osmosis-0.48.3.tgz osmosis/
+  209  ls
+  210  rm osmosis-0.48.3.tar 
+  211  cp /srv/valves/osmosis/osmosis-0.48.3.tgz osmosis/
+  212  cp /srv/valves/osmosis/osmosis-0.48.3.tgz .
+  213  ls
+  214  tar xvfz osmosis-0.48.3.tar 
+  215  tar xvfz osmosis-0.48.3.tgz 
+  216  ls
+  217  chmod a+x bin/osmosis
+  218  ./bin/osmosis --read-api 
+  219  pwd
+  220  cd /srv/valves/
+  221  ls
+  222  /home/vagrant/osmosis/bin/osmosis --read-apidb validateSchemaVersion=no host="192.168.1.124:5432" database="aquagis_pernik" user="gis" --write-xml file="export_20220214T1723.osm"
+  223  /home/vagrant/osmosis/bin/osmosis --read-xml export_20220214T1723.osm --tf accept-ways aq_type=водопровод --used-node --write-xml water.osm
+  224  лс
+  225  ls
+  226  osm2pgrouting -f water.osm -d aquagis_valve_net -U gis
+  227  osm2pgrouting -f water.osm --conf valves_config.xml -d aquagis_valve_net -U gis 
+  228  osm2pgrouting -f water.osm --conf valves_config.xml --addnodes -d aquagis_valve_net -U gis 
+  229  osm2pgrouting -f water.osm --conf valves_config.xml -d aquagis_valve_net -U gis 
+  230  osm2pgrouting -f water.osm --conf valves_config.xml --addnodes -d aquagis_valve_net -U gis 
+  231  osm2pgrouting -f water.osm --conf valves_config.xml --addnodes --tags -d aquagis_valve_net -U gis 
+  232  osm2pgrouting -f water.osm --conf valves_config.xml --addnodes --tags --clean -d aquagis_valve_net -U gis 
+  233  sudo apt-get update
+  234  sudo apt-get upgrade
+  235  sudo apt-get install mapserver-bin
+  236  sudo apt-get install cgi-mapserver
+  237  python3
+  238  ls
+  239  cd /home/vagrant/
+  240  ls
+  241  pip freeze
+  242  pip install streamlit
+  243  pip install seaborn
+  244  cd /srv/valves/
+  245  pip install plotly
+  246  ls
+  247  cd ../
+  248  ls
+  249  cd valves/
+  250  exit
+  251  cd /srv/src/
+  252  streamlit run valve_api.py 
+  253  pip install --upgrade jinja2
+  254  streamlit run valve_api.py 
+  255  exit
+  256  cd /srv/src/
+  257  streamlit run valve_api.py 
+  258  pip install geopandas
+  259  streamlit run valve_api.py 
+  260  pip install psycopg2-binary
+  261  streamlit run valve_api.py 
+  262  pip install SQLAlchemy
+  263  streamlit run valve_api.py 
+  264  exit
+  265  cd /srv/src/
+  266  streamlit run valve_api.py 
+  267  pip install fastapi
+  268  pip install uvicorn
+  269  uvicorn main:app --reload
+  270  uvicorn valves_rest_api:app --reload
+  271  uvicorn valves_rest_api:app --reload -b 0.0.0.0:8501
+  272  uvicorn --help
+  273  uvicorn valves_rest_api:app --reload -host 0.0.0.0 --port 8501
+  274  uvicorn valves_rest_api:app --reload --host 0.0.0.0 --port 8501
+  275  exit
+  276  cd /srv/src/
+  277  ls
+  278  uvicorn valves_rest_api:app --reload --host 0.0.0.0 --port 8501
+  279  ls
+  280  history 
+  281  streamlit run valve_api.py 
+  282  ls
+  283  mapserv -v
+  284  exit
+  285  sudo apt-get update
+  286  sudo apt-get upgrade
+  287  sudo apt-get update
+  288  sudo apt-get upgrade
+  289  cd /srv/valves/
+  290  ls
+  291  cd ../src/
+  292  ls
+  293  history 
+  294  ls
+  295  uvicorn valves_rest_api:app --reload --host 0.0.0.0 --port 8501
+  296  exit
+  297  cd /srv/
+  298  ls
+  299  cd src/
+  300  history 
+  301  uvicorn valves_rest_api:app --reload --host 0.0.0.0 --port 8501
+  302  history 
+  303  history > hist_20220312T1400.txt
